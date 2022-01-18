@@ -16,8 +16,7 @@ namespace Jgoodman_BinaryNumbersInCSha
            string decrypted;
            decrypted = cipher.Decrypt(encrypted);
            Console.WriteLine($"The decrypted message is: '{decrypted}'");
-           
-
+        
 
         
      
