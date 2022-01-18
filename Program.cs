@@ -11,7 +11,11 @@ namespace Jgoodman_BinaryNumbersInCSha
 
            string encrypted;
            encrypted = cipher.Encrypt("Rosebud");
-           Console.WriteLine($"The encrypted message is {encrypted}");
+           Console.WriteLine($"The encrypted message is '{encrypted}");
+
+           string decrypted;
+           decrypted = cipher.Decrypt(encrypted);
+           Console.WriteLine($"The decrypted message is: '{decrypted}'");
            
 
 
