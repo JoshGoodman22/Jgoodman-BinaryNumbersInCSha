@@ -6,16 +6,35 @@ namespace Jgoodman_BinaryNumbersInCSha
     {
         static void Main(string[] args)
         {
+           string filePath = args[0];
+           Console.WriteLine($"loading...{filePath}");
+
+           string message;
+           message = System.IO.File.ReadAllText(filePath);
+           Console.WriteLine($" The encrypted message is: '{message}'. ");
+
+
+           
            Cipher cipher;
-           cipher = new Cipher(5);
+           cipher = new Cipher(3);
 
-           string encrypted;
-           encrypted = cipher.Encrypt("Rosebud");
-           Console.WriteLine($"The encrypted message is '{encrypted}");
+           string decrypt;
+           decrypt = cipher.Decrypt(message);
+           Console.WriteLine(decrypt);
+           
+           int shift = (1);
+           while(shift <= 10)
+           {
+               cipher = new Cipher (shift);
+               decrypt = cipher.Decrypt(message);
+               Console.WriteLine($" The Decrypted message is: {decrypt}");
+               shift = (shift +1);
 
-           string decrypted;
-           decrypted = cipher.Decrypt(encrypted);
-           Console.WriteLine($"The decrypted message is: '{decrypted}'");
+           }
+
+
+
+           
         
 
         
